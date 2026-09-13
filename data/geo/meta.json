@@ -1,0 +1,46 @@
+{
+  "districts": {
+    "source_url": "https://dhm.gov.np/assets/frontend/geo/district77.geojson",
+    "label": "Nepal 77 district boundaries (official DHM)",
+    "file": "nepal_districts.geojson",
+    "features": 77,
+    "vertices_before": 343630,
+    "vertices_after": 0,
+    "simplification_tolerance_deg": 0.002,
+    "bytes": 584756,
+    "fetched_at": "2026-09-12T09:04:24+00:00"
+  },
+  "boundary": {
+    "source_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/NPL/ADM0/geoBoundaries-NPL-ADM0.geojson",
+    "label": "Nepal national boundary (geoBoundaries ADM0, public domain)",
+    "file": "nepal_boundary.geojson",
+    "features": 1,
+    "vertices_before": 66082,
+    "vertices_after": 0,
+    "simplification_tolerance_deg": 0.001,
+    "bytes": 144747,
+    "fetched_at": "2026-09-12T09:04:30+00:00"
+  },
+  "provinces": {
+    "source_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/NPL/ADM1/geoBoundaries-NPL-ADM1.geojson",
+    "label": "Nepal province boundaries (geoBoundaries ADM1, public domain)",
+    "file": "nepal_provinces.geojson",
+    "features": 7,
+    "vertices_before": 141199,
+    "vertices_after": 0,
+    "simplification_tolerance_deg": 0.002,
+    "bytes": 214982,
+    "fetched_at": "2026-09-12T09:04:36+00:00"
+  },
+  "rivers": {
+    "source_url": "https://dhm.gov.np/assets/frontend/geo/River_All.geojson",
+    "label": "Nepal river network (official DHM)",
+    "file": "nepal_rivers.geojson",
+    "features": 1,
+    "vertices_before": 0,
+    "vertices_after": 0,
+    "simplification_tolerance_deg": 0.0015,
+    "bytes": 983298,
+    "fetched_at": "2026-09-12T09:04:41+00:00"
+  }
+}

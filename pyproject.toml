@@ -1,0 +1,25 @@
+# Tooling configuration only - SANKET is not a package. Install with
+# `pip install -r requirements.txt` and run from the repository root, so the
+# top-level import names (backend, shared, data_ingestion, agent) stay absolute.
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+extend-exclude = ["probe", "frontend", ".venv"]
+
+[tool.ruff.lint]
+# Checked on every pass: correctness first (F = pyflakes, E9 = syntax), then the
+# import/style rules this codebase actually keeps.
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = [
+    "E501",   # line length is handled by formatting, not by breaking strings apart
+    "UP006",  # keep typing.Dict style annotations readable in models
+    "UP007",  # Optional[X] stays clearer than X | None in a few schemas
+    "UP028",  # `for x in y: yield x` reads better than `yield from` in the adapters
+    "UP042",  # `class X(str, Enum)` is deliberate: the values go straight into JSON columns
+    "B008",   # FastAPI Depends() in argument defaults is the framework's own idiom
+]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["E402"]        # bootstrap must run before the app modules are imported
+"data_ingestion/normalizers/*" = ["I"]

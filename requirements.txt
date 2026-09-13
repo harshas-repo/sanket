@@ -1,0 +1,42 @@
+# SANKET backend runtime dependencies.
+# These are the exact versions this build was created and tested against
+# (Python 3.12, Windows). `pip install -r requirements.txt` reproduces it.
+
+# --- web layer -------------------------------------------------------------
+fastapi==0.141.1
+starlette==1.6.0
+uvicorn==0.52.4
+watchfiles==1.2.0
+pydantic==2.13.5
+pydantic-settings==2.15.0
+python-dotenv==1.2.3
+anyio==4.15.1
+
+# --- storage ---------------------------------------------------------------
+SQLAlchemy==2.0.52
+# Required whenever DATABASE_URL points at PostgreSQL, which it now does (Supabase). The
+# `+psycopg` scheme in that URL names this driver; without it the app fails at engine creation
+# with a NoSuchModuleError, not at query time. Binary wheel, so no Visual Studio on Windows.
+psycopg[binary]==3.2.9
+
+# --- data ingestion --------------------------------------------------------
+httpx==0.28.1
+beautifulsoup4==4.15.0
+soupsieve==2.9.2
+shapely==2.1.2
+
+# --- language model (agent) ------------------------------------------------#
+# Only used for language understanding. With no API key configured the agent
+# runs in the deterministic fallback, so these are optional at runtime.
+strands-agents==1.55.1
+mcp==2.1.1
+# Provider SDK for LLM_PROVIDER=gemini, which is what this build runs on:
+google-genai==2.23.0
+# Install the one matching LLM_PROVIDER instead, if it is not gemini:
+# anthropic==0.68.0
+# openai==2.6.0
+# boto3 is needed for the Bedrock provider:
+# boto3==1.43.93
+
+# --- developer tooling (not required to run the server) --------------------#
+# ruff==0.16.7
